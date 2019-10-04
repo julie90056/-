@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+  <style>
+      * { margin: 0; padding: 0; }
+      header { background-color: #c2e3ff; overflow: hidden;}  /*如果一個區塊內的子元素皆浮動, 則沒有設定高度的父元素區塊就沒了高度, 如果要讓父元素區塊包含住所有的子元素, 則父元素可以設定 overflow:hidden;*/
+      #logo { background-color: #ffa2e6; font-size: 2em; padding: 10px; float:left}
+      nav { background-color: #345a41;float: right;}
+      nav a { background-color: #a2ffa9; padding: 20px; display: inline-block;}
+      /* 區塊式來讓這個區塊相對父層置中對齊
+擁有 inline 特性, 所以擁有 行高 的存在*/
+      button { display: none; }/*桌機板不需要menu攔*/
+
+    
+    @media( max-width:700px ){
+      button { display: block; padding: 10px; position: absolute; left: 10px; top: 10px; cursor: pointer; }
+        /* button:hover~nav { display: block; } */
+        
+      header { overflow: visible; }
+
+      #logo { float: none; text-align: center; background-color: transparent;}/*透明色*/
+      nav { float: left; width: 60%;display:  none; }
+      nav a { display: block; text-align: center; }
+    }/*響應式網頁編輯, 上面設定的條件都要重新設定*/
+    
+    
+    
+  </style>
+
+</head>
+<body>
+ <header>
+     <button>MENU</button>
+
+      <div id="logo">LOGO</div>
+      
+      <nav>
+        <a href="#">BUTTON1</a>
+        <a href="#">BUTTON2</a>
+        <a href="#">BUTTON3</a>
+        <a href="#">BUTTON4</a>
+      </nav>
+      
+    </header>
+    
+    
+    <script>
+    
+        var IO = false;  //代表menu是否開啟的記錄, true=>開啟
+      document.getElementsByTagName('button').item(0).onclick = function(){
+        if(IO){
+          document.getElementsByTagName('nav')[0].style.display = 'none';
+        }else{
+          document.getElementsByTagName('nav')[0].style.display = 'block';
+        }
+        IO = !IO;
+        console.log(IO);
+      }
+    
+    </script>
+
+
+ 
+  
+</body>
+</html>

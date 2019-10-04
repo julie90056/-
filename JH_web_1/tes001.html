@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+      *{margin: 0;padding: 0}
+      ul,li{list-style: none}
+      li{float: left; margin: 1%;width: 18%}
+      img{width: 100%; height: auto}
+    </style>
+
+  </head>
+  <body>
+
+    <ul class="flowerArea">
+      <!-- <li><img src="images/flower/f1.jpg" alt="">Flower1</li> -->
+    </ul>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $.ajax({
+        url:'TSFlowers.xml',
+        datatype:'xml'
+      }).done(function(TSdata){
+
+        $(TSdata).find('flower').each(function(i,obj){
+          var vtitle = $(this).find('title').text();
+          var vimage = $(this).find('image').text();
+
+          $('.flowerArea').append('<li><img src="images/flower/'+vimage+'.jpg" alt=""><h1>'+vtitle+'</h1></li>');
+
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

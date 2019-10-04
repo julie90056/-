@@ -1,0 +1,67 @@
+<html lang="zh-Hant-TW"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+      header { background-color: #b4dcff; height: 150px; position: relative;}
+        //current time area 需要絕對定位, 所以她的爸爸也需要
+      #main { background-color: #e5b4ff; min-height: 300px; 0}
+      footer { background-color: #95c98e; height: 50px; }
+      #currentTimeArea { background-color: #10436f; color: #c69999; padding: 10px;position: absolute; right: 0; bottom: 0; } 
+
+    </style>
+    
+  </head>
+  <body>
+
+    <!--  header+div#main+footer[TAB]  -->
+    <header>
+      <div id="currentTimeArea">目前時間：XXXXXX</div>
+    </header>
+    <div id="main"></div>
+    <footer></footer>
+    <script>
+      //alert('Hello~~~~~~~2');
+      //document.getElementById('currentTimeArea').innerHTML = '123456';
+      
+      function runTime (){
+        var now = new Date(); //功能變數需要大寫
+        var nowY = now.getFullYear();
+        var nowM = now.getMonth()+1;//月會從0為起點
+        console.log(nowM);
+        
+        var nowD = now.getDate();
+        var nowW = now.getDay();//星期的第幾天, 會從0為起點
+        console.log(nowW);
+        function fn(){
+          var nowH = now.getHours();
+        //定義函式-2 時候等於0
+          var nowI = now.getMinutes();
+        //if (nowI<10){var nowI = '0'+nowI;}
+        
+          var nowS = now.getSeconds();
+        //if (nowS<10){var nowS = '0'+nowS;}
+          
+        
+        }
+        
+
+        //加以處理
+        var weekAy=Array ('日','一','二','三','四','五','六');
+        nowW=weekAy[nowW];
+        var nowStr = nowY+'年'+nowM+'月'+nowD+'日星期'+nowW+' '+nowH+':'+nowI+':'+nowS;
+        
+        document.getElementById('currentTimeArea').innerHTML = nowStr;
+
+      }
+      
+      setInterval(runTime, 1000);  //每隔1000毫秒後執行一次runTime函式
+      
+
+    </script>
+
+
+  
+</body></html>

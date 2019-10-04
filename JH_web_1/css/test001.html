@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      /*
+      想設計的順序參考
+      背景(顏色,影像,重複,定位)>大小(寬高)>邊界(內、外)>定位>內容(圖文)
+      */
+      body {
+        width: 100%; /*留邊*/
+        max-width: 1200px; /* 響應式網頁較常用最大設定寬度*/
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0
+        color: #000;
+      }
+      header {background-color: #8ab9e2;
+        height: 150px;
+        position: relative;
+      }
+      logo {background-color: #a0769d;
+        color: #f7f8f8;
+        position: absolute;
+        width: 300px;
+        height: 30px;
+        left: -60px;
+        top: 50%; /* 置中於header 欄位 */
+        transform: translateY(-50%) rotate(-7deg);/* 自己向上垂直移動, 旋轉 */
+      }
+      
+      header nav{background-color: #c478bf;
+        width: 200px;
+        height: 60px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+      #main {background-color: #458bc7;
+        min-height: 300px;
+        overflow: hidden;
+      }
+      
+      /* 父元素 子孫元素: 中間空格代表找子孫元素 */
+      #main aside{background-color: #4daaaa;
+        min-height: 1200px; 
+        width: 20%;
+        float: left;
+        
+      }
+      #main content{background-color: #5e45c7;
+        min-height: 200px; 
+        width: 56%;
+        float: left;
+         /*
+        margin-left: 2%;
+        margin-right: 2%;
+        margin: 四周統一;
+        margin: 上下 左右;
+        margin: 上 右 下 左;
+        margin: 上 右左 下;
+        */
+        margin: 0 2%;
+      }
+      
+      footer {background-color: #6dc36d;
+        padding: 15px; /*框內邊界*/
+        /*margin: 15px; 框外邊界*/
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center /*內容水平置中*/
+      }
+      body>aside {background-color: #377979;
+        width: 60px; 
+        height: 200px;
+        position: fixed;
+        right:0;
+        top: 50%; /* 置中於body 欄位 */
+        transform: translateY(-50%);/* 自己向上垂直移動*/
+      } /*需要用body>區隔main content 的aside*/
+    </style>
+  </head>
+  <body style="background-color: rgba(209, 199, 146, 0.94);"
+   >
+    <!-- HTML註解 -->
+    <header>
+      <logo>logo</logo>
+      <nav>Navigation</nav>
+    </header>
+    
+    <div id="main">
+      <aside>側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字</aside>
+      <content>111111</content>
+      <aside>側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字側邊區塊文字</aside>
+    </div>
+    <footer>Copyright © 2013 TSweb | 建議使用 Chrome 瀏覽器 | Template by Tsuiling | Maintain by JulieHuang</footer>
+    <aside></aside>
+
+
+  </body>
+</html>

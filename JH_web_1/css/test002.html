@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- link:css[TAB] 使用Emmet 的快速鍵link 文件-->
+    <link rel="stylesheet" href="test002.css">
+    <!--可獨立設定CSS樣式用link取用-->
+    <style>
+       body { background-color: #9dd9c5; }
+
+      #header     { background-color:green;  }    /* 1.在ID名稱中, 設定為綠色背景   100 */
+      body .block { background-color:yellow; }    /* 2.在複合規則中, 設定為黃色背景   11 */
+      .block      { background-color:blue;   }    /* 3.在class名稱中, 設定為藍色背景 10 */
+      body div    { background-color:#7b4f4f;   } /* 4.在複合規則中, 設定為灰色背景   2 */
+      div         { background-color:red;    }    /* 5.在標籤名稱中, 設定為紅色背景   1 */
+    </style>
+ <!--優先權的順序以後面指令的為大, 【ID名稱】大於複合規則-->
+  
+</head>
+<body>
+  <div id="header" class="block"> 這裡是頁首區塊 </div>
+
+</body>
+</html>
